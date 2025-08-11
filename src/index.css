@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* dark selector */
+@custom-variant dark (&:is(.dark *));
+
+/* tokens used by classes: bg-*, text-*, border-*, ring-*, shadow-input */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-secondary: var(--secondary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-ring: var(--ring);
+  --color-border: var(--border);
+
+  --shadow-input:
+    0px 2px 3px -1px rgba(0,0,0,0.1),
+    0px 1px 0px 0px rgba(25,28,33,0.02),
+    0px 0px 0px 1px rgba(25,28,33,0.08);
+}
+
+/* light */
+:root{
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --secondary: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --ring: oklch(0.708 0 0);
+  --border: oklch(0.922 0 0);
+
+  /* input hover glow */
+  --glow-from: oklch(0.76 0.17 260);
+  --glow-to:   oklch(0.75 0.18 320);
+
+  --code: oklch(0.72 0.18 45);
+
+  /* header */
+  --header-bg: color-mix(in oklch, var(--background) 90%, var(--ring) 10%); 
+
+  /* button */
+  --btn-from:#1f2937; --btn-to:#4b5563; --btn-text:#fff; --btn-border:rgba(0,0,0,.15);
+
+    --fx-1: oklch(0.72 0.16 260); /* softer blue */
+  --fx-2: oklch(0.70 0.14 300); /* softer purple */
+  --glow-from: var(--fx-1);
+  --glow-to:   var(--fx-2);
+}
+
+/* dark */
+.dark{
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --ring: oklch(0.556 0 0);
+  --border: oklch(1 0 0 / 10%);
+
+  --glow-from: oklch(0.72 0.23 264.376);
+  --glow-to:   oklch(0.70 0.22 303.9);
+
+  --code: oklch(0.78 0.20 45);
+
+   /* header */
+  --header-bg: color-mix(in oklch, var(--card) 88%, black 12%);
+
+  /* button */
+  --btn-from:#0b0b0b; --btn-to:#1f1f1f; --btn-text:#e5e7eb; --btn-border:rgba(255,255,255,.08);
+
+    --fx-1: oklch(0.68 0.18 264);
+  --fx-2: oklch(0.66 0.17 304);
+  --glow-from: var(--fx-1);
+  --glow-to:   var(--fx-2);
+}
+
+@layer base{
+  *{ @apply border-border outline-ring/50; }
+  body{ @apply bg-background text-foreground; }
+}
