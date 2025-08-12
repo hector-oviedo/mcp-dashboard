@@ -2,6 +2,8 @@
 
 > **Status:** Experimental. Use at your own responsibility.
 
+![App Demo #1](screenshots/gif1.gif)
+
 A lightweight, open‑source web UI to **explore and connect to Model Context Protocol (MCP) servers** from the browser. It pulls the public server list from **Pulse**, supports **HTTP** and **SSE** transports, lets you attach **auth headers**, and provides a clean **Blueprint** panel to inspect capabilities and run tools.
 
 ---
@@ -196,6 +198,10 @@ chromium --disable-web-security --user-data-dir=/tmp/chrome-dev
 * Prefer a hardened reverse proxy in production with TLS termination and strict allowlists.
 
 ---
+
+## Screenshots
+
+![App Demo #1](screenshots/gif2.gif)
 
 ## License
 
